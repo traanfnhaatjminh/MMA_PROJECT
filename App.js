@@ -6,7 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.containerTop}>
         <View style={styles.top}>
-          <Text style={styles.text}>Top Left</Text>
+          <Text style={styles.text}>Top Lefttttt</Text>
         </View>
       </View>
       <View style={styles.containerCenter}>
