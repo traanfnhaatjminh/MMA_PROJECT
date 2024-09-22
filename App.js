@@ -1,81 +1,170 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
+import React, { useState } from 'react';
 
 export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState('T-Shirt');
+
+  const categories = ['T-Shirt', 'Jeans', 'Short', 'Pants'];
+  const products = {
+    'T-Shirt': [
+      { name: '$MAKER THINGS TEE IN WHITE', price: '600000 VND', image: 'https://smakerclothing.com/upload/sanpham/dscf9477-1710.jpg' },
+      { name: 'I GOT HOMIES IN SAUDI TEE IN BLACK', price: '500000 VND', image: 'https://smakerclothing.com/upload/sanpham/dscf9495-2979.jpg' },
+      { name: 'I GOT MONEY IN SAUDI TEE IN WHITE', price: '500000 VND', image: 'https://smakerclothing.com/upload/sanpham/dscf9491-3408.jpg' },
+    ],
+    'Jeans': [
+      { name: 'Jeans 1', price: '$50', image: 'https://via.placeholder.com/150' },
+      { name: 'Jeans 2', price: '$60', image: 'https://via.placeholder.com/150' },
+      { name: 'Jeans 3', price: '$70', image: 'https://via.placeholder.com/150' },
+    ],
+    'Short': [
+      { name: 'Short 1', price: '$15', image: 'https://via.placeholder.com/150' },
+      { name: 'Short 2', price: '$18', image: 'https://via.placeholder.com/150' },
+      { name: 'Short 3', price: '$20', image: 'https://via.placeholder.com/150' },
+    ],
+    'Pants': [
+      { name: 'Pants 1', price: '$40', image: 'https://via.placeholder.com/150' },
+      { name: 'Pants 2', price: '$45', image: 'https://via.placeholder.com/150' },
+      { name: 'Pants 3', price: '$50', image: 'https://via.placeholder.com/150' },
+    ],
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.containerTop}>
-        <View style={styles.top}>
-          <Text style={styles.text}>Top Left</Text>
-        </View>
+      {/* Header */}
+      <View style={styles.header}>
+        <TouchableOpacity>
+          <Text>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text>Register</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text>Cart</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.containerCenter}>
-        <View style={styles.center}>
-          <Text style={styles.textCenter}>Center</Text>
-        </View>
+
+      {/* Banner */}
+      <View style={styles.banner}>
+        <Image
+          style={styles.bannerImage}
+          source={{ uri: 'https://via.placeholder.com/400x150' }}
+        />
       </View>
-      <View style={styles.containerBottom}>
-        <View style={styles.bottom}>
-          <Text style={styles.textBottom}>Bottom Right</Text>
+
+      {/* Body */}
+      <View style={styles.body}>
+        {/* Categories */}
+        <View>
+          <ScrollView horizontal style={styles.categories}>
+            {categories.map(category => (
+              <TouchableOpacity
+                key={category}
+                onPress={() => setSelectedCategory(category)}
+                style={styles.categoryItem}
+              >
+                <Text style={styles.categoryText}>{category}</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+
+
+        {/* Products */}
+        <View style={styles.productList}>
+          {products[selectedCategory].map((product, index) => (
+            <View key={index} style={styles.productCard}>
+              <Image source={{ uri: product.image }} style={styles.productImage} />
+              <Text style={styles.productName}>{product.name}</Text>
+              <Text style={styles.productPrice}>{product.price}</Text>
+            </View>
+          ))}
         </View>
       </View>
 
+      {/* Footer */}
+      <View style={styles.footer}>
+        <Text>Email: davidtran@gmail.com</Text>
+        <Text>Phone: 0969177461</Text>
+      </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e2fefe'
+    backgroundColor: '#fff',
   },
-  containerTop: {
-    flex: 1
+  header: {
+    marginTop: 40,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
+    backgroundColor: '#f8f8f8',
   },
-  text: {
-    fontSize: 20,
-    marginLeft: 10,
-    color: '#4aa2c8'
+  banner: {
+    alignItems: 'center',
+    marginVertical: 10,
   },
-  textBottom: {
-    fontSize: 20,
-    color: 'white',
-    textAlign: 'right',
-    marginRight: 20
+  bannerImage: {
+    width: 400,
+    height: 150,
+    resizeMode: 'contain',
   },
-  top: {
-    marginTop: 80,
-    marginHorizontal: 50,
-    paddingVertical: 10,
-    borderWidth: 1,
-    borderColor: 'red',
-    backgroundColor: '#ffffff'
-  },
-  containerCenter: {
+  body: {
     flex: 1,
+    paddingHorizontal: 10
+  },
+  categories: {
+    marginBottom: 10,
+  },
+  categoryItem: {
+    width: 80,
+    height: 80,
+    backgroundColor: '#ddd',
+    borderRadius: 40, // Makes the shape circular
     justifyContent: 'center',
     alignItems: 'center',
+    marginRight: 10,
   },
-  center: {
-    width: 130,
-    height: 130,
-    backgroundColor: '#2cff56',
-    justifyContent: 'center',
+  categoryText: {
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  productList: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  productCard: {
+    width: '48%',
+    backgroundColor: '#f5f5f5',
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 20,
     alignItems: 'center',
-    borderRadius: 100
   },
-  textCenter: {
-    color: 'blue',
-    fontSize: 20
+  productImage: {
+    width: 150,
+    height: 150,
+    marginBottom: 10,
+    resizeMode: 'contain',
   },
-  containerBottom: {
-    flex: 1
+  productName: {
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  bottom: {
-    backgroundColor: '#56abbf',
-    marginTop: 120,
-    paddingVertical: 10,
-    marginHorizontal: 30,
-    borderRadius: 30
-  }
-})
+  productPrice: {
+    fontSize: 14,
+    color: '#888',
+  },
+  footer: {
+    marginTop: 40,
+    padding: 20,
+    backgroundColor: '#f8f8f8',
+    alignItems: 'center',
+  },
+});
