@@ -10,7 +10,7 @@ export default function App() {
 
   function Home() {
     return (
-      <View>
+      <View style={{flex:1}}>
         <Text>HOME</Text>
       </View>
     );
