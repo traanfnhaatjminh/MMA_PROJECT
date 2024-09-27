@@ -8,10 +8,34 @@ export default function App() {
 
   const Tab = createBottomTabNavigator();
 
-  function home() {
+  function Home() {
     return (
       <View>
-        <Text>Home</Text>
+        <Text>HOME</Text>
+      </View>
+    );
+  }
+
+  function Reorder() {
+    return (
+      <View>
+        <Text>REORDER</Text>
+      </View>
+    );
+  }
+
+  function Cart() {
+    return (
+      <View>
+        <Text>CART</Text>
+      </View>
+    );
+  }
+
+  function Account() {
+    return (
+      <View>
+        <Text>ACCOUNT</Text>
       </View>
     );
   }
@@ -19,10 +43,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name='HOME' component={home}></Tab.Screen>
-        <Tab.Screen name='REORDER' component={home}></Tab.Screen>
-        <Tab.Screen name='CART' component={home}></Tab.Screen>
-        <Tab.Screen name='ACCOUNT' component={home}></Tab.Screen>
+        <Tab.Screen name='HOME' component={Home}></Tab.Screen>
+        <Tab.Screen name='REORDER' component={Reorder}></Tab.Screen>
+        <Tab.Screen name='CART' component={Cart}></Tab.Screen>
+        <Tab.Screen name='ACCOUNT' component={Account}></Tab.Screen>
       </Tab.Navigator>
     </NavigationContainer>
   );
