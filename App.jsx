@@ -41,7 +41,8 @@ export default function App() {
         headerShown: false, 
         tabBarShowLabel: false,
         tabBarActiveTintColor: "blue", // Notice the lowercase 'r' for red
-        tabBarInactiveTintColor: "grey", // You can define the inactive color
+        tabBarInactiveTintColor: "grey",
+        keyboardHidesTabBar: false // You can define the inactive color
       }}>
         <Tab.Screen name='HOME' component={HomeScreen} options={{
           tabBarIcon: ({ color }) => {
