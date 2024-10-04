@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View, TextInput, SafeAreaView } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, TextInput, SafeAreaView, FlatList } from 'react-native';
+import React, { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';  // Use Expo's version
 import Header from '../components/Header';
 import Fontisto from 'react-native-vector-icons/Fontisto'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import Category from '../components/Category';
 
+const categories = ['ALL', 'T-SHIRT', 'JEANS', 'SHORTS', 'PANTS'];
 const HomeScreen = () => {
+    const [selectedCategory, setSelectedCategory] = useState(null);
     return (
         <LinearGradient colors={["#FDF0F3", '#FFFBFC']} style={styles.container}>
             <Header />
@@ -16,6 +18,18 @@ const HomeScreen = () => {
                     <TextInput style={styles.textInput} placeholder='search here ...' />
                 </SafeAreaView>
             </View>
+            <FlatList
+                data={categories}
+                renderItem={({ item }) => (
+                    <Category
+                        item={item}
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                    />
+                )}
+                keyExtractor={(item) => item}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}/>
         </LinearGradient>
     );
 }
