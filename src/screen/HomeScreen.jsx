@@ -4,10 +4,11 @@ import { LinearGradient } from 'expo-linear-gradient';  // Use Expo's version
 import Header from '../components/Header';
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import Category from '../components/Category';
+import ProductCard from '../components/ProductCard';
 
 const categories = ['ALL', 'T-SHIRT', 'JEANS', 'SHORTS', 'PANTS'];
 const HomeScreen = () => {
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState('ALL');
     return (
         <LinearGradient colors={["#FDF0F3", '#FFFBFC']} style={styles.container}>
             <Header />
@@ -29,7 +30,12 @@ const HomeScreen = () => {
                 )}
                 keyExtractor={(item) => item}
                 horizontal={true}
-                showsHorizontalScrollIndicator={false}/>
+                showsHorizontalScrollIndicator={false} />
+
+            <View style={{ flexDirection: "row", marginTop: 10 }}>
+                <ProductCard />
+                <ProductCard />
+            </View>
         </LinearGradient>
     );
 }
@@ -38,7 +44,6 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         padding: 20
     },
     matchText: {
