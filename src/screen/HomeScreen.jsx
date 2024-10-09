@@ -5,37 +5,62 @@ import Header from '../components/Header';
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import Category from '../components/Category';
 import ProductCard from '../components/ProductCard';
+import data from '../data/database.json'
 
 const categories = ['ALL', 'T-SHIRT', 'JEANS', 'SHORTS', 'PANTS'];
 const HomeScreen = () => {
+    const [products, setProducts] = useState(data.products);
     const [selectedCategory, setSelectedCategory] = useState('ALL');
+    const handleLiked = (item) => {
+        const newProducts = products.map((prod) => {
+            if (prod.id === item.id) {
+                return {
+                    ...prod,
+                    isLiked: !prod.isLiked
+                }
+            }
+            return prod;
+        });
+        setProducts(newProducts);
+    }
+
     return (
         <LinearGradient colors={["#FDF0F3", '#FFFBFC']} style={styles.container}>
             <Header />
-            <Text style={styles.matchText}>Match Your Style</Text>
-            <View style={styles.inputContainer}>
-                <Fontisto name='search' size={20} color={'grey'} style={styles.iconContainer} />
-                <SafeAreaView>
-                    <TextInput style={styles.textInput} placeholder='search here ...' />
-                </SafeAreaView>
-            </View>
             <FlatList
-                data={categories}
-                renderItem={({ item }) => (
-                    <Category
-                        item={item}
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                    />
+                numColumns={2}
+                data={products}
+                ListHeaderComponent={
+                    <>
+                        <Text style={styles.matchText}>Match Your Style</Text>
+                        <View style={styles.inputContainer}>
+                            <Fontisto name='search' size={20} color={'grey'} style={styles.iconContainer} />
+                            <SafeAreaView>
+                                <TextInput style={styles.textInput} placeholder='search here ...' />
+                            </SafeAreaView>
+                        </View>
+                        <FlatList
+                            data={categories}
+                            renderItem={({ item }) => (
+                                <Category
+                                    item={item}
+                                    selectedCategory={selectedCategory}
+                                    setSelectedCategory={setSelectedCategory}
+                                />
+                            )}
+                            keyExtractor={(item) => item}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false} />
+                    </>
+                }
+                renderItem={({ item, index }) => (
+                    <ProductCard item={item} handleLiked={handleLiked} />
                 )}
-                keyExtractor={(item) => item}
-                horizontal={true}
-                showsHorizontalScrollIndicator={false} />
-
-            <View style={{ flexDirection: "row", marginTop: 10 }}>
-                <ProductCard />
-                <ProductCard />
-            </View>
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{
+                    paddingBottom: 55
+                }}
+            />
         </LinearGradient>
     );
 }
