@@ -41,7 +41,6 @@ export default function App() {
   const MyHomeStack = () => {
     return (
       <Stack.Navigator screenOptions={{
-        headerShown: false
       }}
         initialRouteName='PRODUCT_DETAILS'
       >
