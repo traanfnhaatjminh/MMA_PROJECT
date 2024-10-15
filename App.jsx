@@ -41,8 +41,9 @@ export default function App() {
   const MyHomeStack = () => {
     return (
       <Stack.Navigator screenOptions={{
+        headerShown: false
       }}
-        initialRouteName='PRODUCT_DETAILS'
+        initialRouteName=''
       >
         <Stack.Screen name="HOME" component={HomeScreen} />
         <Stack.Screen name="PRODUCT_DETAILS" component={ProductDetailsScreen} />

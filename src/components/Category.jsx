@@ -3,11 +3,13 @@ import React from 'react'
 
 const Category = ({ item, selectedCategory, setSelectedCategory }) => {
     return (
-        <TouchableOpacity onPress={() => setSelectedCategory(item)}>
+        <TouchableOpacity onPress={() => setSelectedCategory(item.cname)}>
             <Text style={[
                 styles.categoryText,
-                selectedCategory === item
-                && { color: 'white', backgroundColor: '#E96E6E' },]}>{item}</Text>
+                selectedCategory === item.cname && { color: 'white', backgroundColor: '#E96E6E' }
+            ]}>
+                {item.cname}
+            </Text>
         </TouchableOpacity>
     )
 }
