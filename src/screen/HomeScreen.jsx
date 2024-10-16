@@ -11,6 +11,7 @@ const HomeScreen = () => {
     const [products, setProducts] = useState(data.products);
     const [categories, setCategories] = useState(data.categories);
     const [selectedCategory, setSelectedCategory] = useState('T-SHIRT');
+    const [searchQuery, setSearchQuery] = useState('');
     const handleLiked = (item) => {
         const newProducts = products.map((prod) => {
             if (prod.id === item.id) {
@@ -22,7 +23,16 @@ const HomeScreen = () => {
             return prod;
         });
         setProducts(newProducts);
-    }
+    };
+
+    // Filter products based on the selected category and search query
+    const filteredProducts = products.filter((product) => {
+        const selectedCategoryObj = categories.find(cat => cat.cname === selectedCategory);
+        const matchesCategory = product.cid === selectedCategoryObj?.cid;
+        const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+
+        return matchesCategory && matchesSearch;
+    });
 
     return (
         <LinearGradient colors={["#FDF0F3", '#FFFBFC']} style={styles.container}>
@@ -32,7 +42,13 @@ const HomeScreen = () => {
             <View style={styles.inputContainer}>
                 <Fontisto name='search' size={20} color={'grey'} style={styles.iconContainer} />
                 <SafeAreaView>
-                    <TextInput style={styles.textInput} placeholder='search here ...' />
+                    {/* TextInput to handle search */}
+                    <TextInput
+                        style={styles.textInput}
+                        placeholder='search here ...'
+                        value={searchQuery}
+                        onChangeText={(text) => setSearchQuery(text)} // Update search query on input change
+                    />
                 </SafeAreaView>
             </View>
 
@@ -53,17 +69,16 @@ const HomeScreen = () => {
                 />
             </View>
 
-
             {/* Products FlatList */}
             <FlatList
                 numColumns={2}
-                data={products}
+                data={filteredProducts}
                 renderItem={({ item, index }) => (
                     <ProductCard item={item} handleLiked={handleLiked} />
                 )}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{
-                    paddingBottom: 55
+                    paddingBottom: "80%"
                 }}
             />
         </LinearGradient>
