@@ -1,13 +1,21 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Entypo from 'react-native-vector-icons/Entypo'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import { useNavigation } from '@react-navigation/native'
 
-const Header = () => {
+const Header = ({ isCart }) => {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            <View style={styles.iconlist}>
-                <Entypo style={styles.icon} name='list' size={25} color={'black'} />
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('HOME_STACK')} style={styles.iconlist}>
+                {
+                    isCart ? <Ionicons name='chevron-back' color={'#E96E6E'} size={20} /> :
+                        <Entypo style={styles.icon} name='list' size={25} color={'black'} />
+                }
+
+            </TouchableOpacity>
+            {isCart && <Text style={styles.myCart}>My Cart</Text>}
 
             <Image source={require('../assets/avatar_default.jpg')} style={styles.avatar} />
         </View>
@@ -33,9 +41,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 22,
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems: 'center'
     },
     icon: {
         textAlign: 'center'
+    },
+    myCart: {
+        fontSize: 20,
+        color: 'black'
     }
 })

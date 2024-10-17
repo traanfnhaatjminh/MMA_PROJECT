@@ -8,6 +8,7 @@ import Entypo from 'react-native-vector-icons/Entypo'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
+import CartScreen from './src/screen/CartScreen';
 
 export default function App() {
 
@@ -18,14 +19,6 @@ export default function App() {
     return (
       <View>
         <Text>REORDER</Text>
-      </View>
-    );
-  }
-
-  function Cart() {
-    return (
-      <View>
-        <Text>CART</Text>
       </View>
     );
   }
@@ -59,10 +52,11 @@ export default function App() {
         tabBarActiveTintColor: "blue", // Notice the lowercase 'r' for red
         tabBarInactiveTintColor: "grey",
         keyboardHidesTabBar: false // You can define the inactive color
-      }}>
+      }}
+      initialRouteName='CART'>
         <Tab.Screen name='HOME_STACK' component={MyHomeStack} options={{
           tabBarIcon: ({ color }) => {
-            return <Entypo name='home' size={20} color={color} />
+            return <Entypo name='home' size={20} color={color}/>
           }
         }}></Tab.Screen>
         <Tab.Screen name='REORDER' component={Reorder} options={{
@@ -70,7 +64,7 @@ export default function App() {
             return <FontAwesome name='reorder' size={20} color={color} />
           }
         }}></Tab.Screen>
-        <Tab.Screen name='CART' component={Cart} options={{
+        <Tab.Screen name='CART' component={CartScreen} options={{
           tabBarIcon: ({ color }) => {
             return <Entypo name='shopping-cart' size={20} color={color} />
           }
