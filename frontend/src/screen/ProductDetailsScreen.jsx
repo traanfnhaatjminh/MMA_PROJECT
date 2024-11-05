@@ -32,7 +32,7 @@ const ProductDetailsScreen = () => {
                     <Image source={{ uri: item.image }} style={styles.coverImage} />
                     <View style={styles.contentContainer}>
                         <Text style={styles.title}>{item.name}</Text>
-                        <Text style={[styles.price, styles.title]}>{item.sale_price} VND</Text>
+                        <Text style={[styles.price, styles.title]}>{item.price} VND</Text>
                     </View>
                     <Text style={styles.description}>{item.describe}</Text>
                     <Text style={[styles.sizeText, styles.title]}>Size</Text>

@@ -19,7 +19,7 @@ export const CartProvider = ({ children }) => { // lowercase 'children'
     }
 
     const addToCart = async (item) => {
-        const itemExist = carts.findIndex((cart) => cart.id === item.id);
+        const itemExist = carts.findIndex((cart) => cart._id === item._id);
         if (itemExist === -1) {
             const newCartItem = [...carts, item];
             await AsyncStorage.setItem("carts", JSON.stringify(newCartItem));
@@ -29,14 +29,14 @@ export const CartProvider = ({ children }) => { // lowercase 'children'
     }
 
     const deleteItemFromCart = async (item) => {
-        const newCartItem = carts.filter((cart) => cart.id !== item.id);
+        const newCartItem = carts.filter((cart) => cart._id !== item._id);
         await AsyncStorage.setItem("carts", JSON.stringify(newCartItem));
         setCarts(newCartItem);
         totalSum(newCartItem);
     }
 
     const totalSum = (carts) => {
-        const totalSum = carts.reduce((amount, item) => amount + item.sale_price, 0);
+        const totalSum = carts.reduce((amount, item) => amount + item.price, 0);
         setTotalPrice(totalSum);
     }
 

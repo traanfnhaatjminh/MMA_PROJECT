@@ -9,6 +9,10 @@ import { CartContext } from '../context/CartContext';
 
 const CartScreen = () => {
     const { carts, totalPrice, deleteItemFromCart } = useContext(CartContext);
+    const totalCost = totalPrice + 25000;
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('de-DE').format(price); // 'de-DE' for the format like 1.000.000
+    };
     return (
         <LinearGradient
             colors={['#FDF0F3', '#FFFBFC']}
@@ -20,26 +24,26 @@ const CartScreen = () => {
                 data={carts}
                 renderItem={({ item }) => (
 
-                    <CartCard 
-                    item={item} 
-                    deleteItemFromCart={deleteItemFromCart} />
+                    <CartCard
+                        item={item}
+                        deleteItemFromCart={deleteItemFromCart} />
                 )}
                 ListFooterComponent={
                     <>
                         <View style={styles.priceContainer}>
                             <View style={styles.priceAndShipping}>
                                 <Text style={styles.text}>Total:</Text>
-                                <Text style={styles.text}>{totalPrice} VND</Text>
+                                <Text style={styles.text}>{formatPrice(totalPrice)} VND</Text>
                             </View>
                             <View style={styles.priceAndShipping}>
                                 <Text style={styles.text}>Shipping:</Text>
-                                <Text style={styles.text}>25000 VND</Text>
+                                <Text style={styles.text}>{formatPrice(25000)} VND</Text>
                             </View>
                         </View>
                         <View style={styles.divider} />
                         <View style={styles.priceAndShipping}>
                             <Text style={styles.text}>Total Price:</Text>
-                            <Text style={[styles.text, { color: "black", fontWeight: "700" }]}>{totalPrice} VND</Text>
+                            <Text style={[styles.text, { color: "black", fontWeight: "700" }]}>{formatPrice(totalCost)} VND</Text>
                         </View>
                     </>
                 }

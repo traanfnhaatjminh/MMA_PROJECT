@@ -10,6 +10,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ProductDetailsScreen from './src/screen/ProductDetailsScreen';
 import CartScreen from './src/screen/CartScreen';
 import { CartContext, CartProvider } from './src/context/CartContext';
+import Login from './src/screen/Login';
+import SignUp from './src/screen/SignUp';
+import ProfileScreen from './src/screen/Profile';
 
 export default function App() {
 
@@ -40,6 +43,8 @@ export default function App() {
       >
         <Stack.Screen name="HOME" component={HomeScreen} />
         <Stack.Screen name="PRODUCT_DETAILS" component={ProductDetailsScreen} />
+        <Stack.Screen name="LOGIN" component={Login} />
+        <Stack.Screen name="SIGN-UP" component={SignUp} />
       </Stack.Navigator>
     );
   }
@@ -66,9 +71,9 @@ export default function App() {
           }}></Tab.Screen>
           <Tab.Screen name='CART' component={CartScreen} options={{
             tabBarIcon: ({ color, size }) => {
-              const {carts} = useContext(CartContext);
+              const { carts } = useContext(CartContext);
               return (
-                <View style={{position:"relative"}}>
+                <View style={{ position: "relative" }}>
                   <Entypo name='shopping-cart' size={20} color={color}
                   />
                   <View style={{
@@ -76,23 +81,23 @@ export default function App() {
                     width: 14,
                     borderRadius: 7,
                     backgroundColor: color,
-                    justifyContent:"center",
-                    alignItems:"center",
-                    position:"absolute",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "absolute",
                     top: -10,
                     right: -5
                   }}>
                     <Text style={{
                       color: "white",
-                      fontSize:10,
-                      fontWeight:"700"
+                      fontSize: 10,
+                      fontWeight: "700"
                     }}>{carts?.length}</Text>
                   </View>
                 </View>
               )
             }
           }}></Tab.Screen>
-          <Tab.Screen name='ACCOUNT' component={Account} options={{
+          <Tab.Screen name='PROFILE' component={ProfileScreen} options={{
             tabBarIcon: ({ color }) => {
               return <MaterialCommunityIcons name='account' size={25} color={color} />
             }
@@ -100,6 +105,5 @@ export default function App() {
         </Tab.Navigator>
       </NavigationContainer>
     </CartProvider>
-
   );
 }

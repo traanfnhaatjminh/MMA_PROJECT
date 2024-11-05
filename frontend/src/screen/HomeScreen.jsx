@@ -1,17 +1,47 @@
 import { StyleSheet, Text, View, TextInput, SafeAreaView, FlatList } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';  // Use Expo's version
 import Header from '../components/Header';
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import Category from '../components/Category';
 import ProductCard from '../components/ProductCard';
-import data from '../data/database.json'
+import axios from 'axios';
 
 const HomeScreen = () => {
-    const [products, setProducts] = useState(data.products);
-    const [categories, setCategories] = useState(data.categories);
-    const [selectedCategory, setSelectedCategory] = useState('T-SHIRT');
+    const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('6727a2167c0055bfe09f2e1b');
     const [searchQuery, setSearchQuery] = useState('');
+
+    useEffect(() => {
+        // Fetch categories
+        axios.get('http://192.168.2.104:9999/categories/list')
+            .then((response) => {
+                setCategories(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching categories:", error);
+            });
+        fetchProductsByCategory(selectedCategory);
+    }, []);
+
+    useEffect(() => {
+        fetchProductsByCategory(selectedCategory);
+    }, [selectedCategory]);
+
+    const fetchProductsByCategory = async (categoryId) => {
+        try {
+            const response = await axios.get(`http://192.168.2.104:9999/products/category/${categoryId}`);
+            setProducts(response.data);
+        } catch (error) {
+            console.error("Error fetching products by category:", error);
+        }
+    };
+
+    const filteredProducts = products.filter((product) =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     const handleLiked = (item) => {
         const newProducts = products.map((prod) => {
             if (prod.id === item.id) {
@@ -25,19 +55,10 @@ const HomeScreen = () => {
         setProducts(newProducts);
     };
 
-    // Filter products based on the selected category and search query
-    const filteredProducts = products.filter((product) => {
-        const selectedCategoryObj = categories.find(cat => cat.cname === selectedCategory);
-        const matchesCategory = product.cid === selectedCategoryObj?.cid;
-        const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
-
-        return matchesCategory && matchesSearch;
-    });
-
     return (
         <LinearGradient colors={["#FDF0F3", '#FFFBFC']} style={styles.container}>
             <Header />
-            <Text style={styles.matchText}>Match Your Style</Text>
+            <Text style={styles.matchText}>$MAKER CLOTHING</Text>
 
             <View style={styles.inputContainer}>
                 <Fontisto name='search' size={20} color={'grey'} style={styles.iconContainer} />
@@ -63,7 +84,7 @@ const HomeScreen = () => {
                             setSelectedCategory={setSelectedCategory}
                         />
                     )}
-                    keyExtractor={(item) => item.cid.toString()}
+                    keyExtractor={(item) => item._id}
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                 />
@@ -77,7 +98,7 @@ const HomeScreen = () => {
                     <ProductCard item={item} handleLiked={handleLiked} />
                 )}
                 showsVerticalScrollIndicator={false}
-                keyExtractor={(item) => item.id}
+                keyExtractor={(item) => item._id}
                 contentContainerStyle={{
                     paddingBottom: "80%"
                 }}

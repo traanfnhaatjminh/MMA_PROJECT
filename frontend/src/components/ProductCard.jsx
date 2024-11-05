@@ -5,6 +5,10 @@ import { useNavigation } from '@react-navigation/native'
 
 const ProductCard = ({ item, handleLiked }) => {
     const navigation = useNavigation();
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('de-DE').format(price); // 'de-DE' for the format like 1.000.000
+    };
+
     return (
         <TouchableOpacity onPress={() => {
             navigation.navigate("PRODUCT_DETAILS", {item});
@@ -12,7 +16,7 @@ const ProductCard = ({ item, handleLiked }) => {
             <Image source={{ uri: item.image }} style={styles.coverImage} />
             <View style={styles.content}>
                 <Text style={styles.title}>{item.name}</Text>
-                <Text style={styles.price}>{item.sale_price} VND</Text>
+                <Text style={styles.price}>{formatPrice(item.price)} VND</Text>
             </View>
             <TouchableOpacity onPress={() => { handleLiked(item) }} style={styles.likeContainer}>
                 {
@@ -24,7 +28,7 @@ const ProductCard = ({ item, handleLiked }) => {
                 }
             </TouchableOpacity>
         </TouchableOpacity>
-    )
+    );
 }
 
 export default ProductCard

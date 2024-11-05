@@ -19,177 +19,185 @@
   ],
   "products": [
     {
-      "id": 1,
       "name": "$MAKER THINGS TEE IN WHITE",
-      "original_price": 600000,
-      "sale_price": 500000,
-      "quantity": 20,
+      "price": 500000,
+      "quantityInStock": 20,
       "describe": "Unisex,Oversize,100% Cotton,In nổi,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf9477-1710.jpg",
-      "cid": 1
+      "cid": "6727a2167c0055bfe09f2e1b"
     },
     {
-      "id": 2,
       "name": "I GOT HOMIES IN SAUDI TEE IN BLACK",
-      "original_price": 500000,
-      "sale_price": 400000,
-      "quantity": 14,
+      "price": 400000,
+      "quantityInStock": 14,
       "describe": "Unisex,Oversize,100% Cotton,In nổi,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf9495-2979.jpg",
-      "cid": 1
+      "cid": "6727a2167c0055bfe09f2e1b"
     },
     {
-      "id": 3,
       "name": "I GOT MONEY IN SAUDI TEE IN WHITE",
-      "original_price": 500000,
-      "sale_price": 400000,
-      "quantity": 11,
+      "price": 400000,
+      "quantityInStock": 11,
       "describe": "Unisex,Oversize,100% Cotton,In nổi,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf9491-3408.jpg",
-      "cid": 1
+      "cid": "6727a2167c0055bfe09f2e1b"
     },
     {
-      "id": 4,
       "name": "YACHT CLUB TANK TOP IN DARK PURPLE",
-      "original_price": 600000,
-      "sale_price": 500000,
-      "quantity": 10,
+      "price": 500000,
+      "quantityInStock": 10,
       "describe": "Unisex,Oversize,100% Cotton,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf9521-6368.jpg",
-      "cid": 1
+      "cid": "6727a2167c0055bfe09f2e1b"
     },
     {
-      "id": 5,
       "name": "YACHT CLUB TEE IN BROWN",
-      "original_price": 600000,
-      "sale_price": 500000,
-      "quantity": 12,
+      "price": 500000,
+      "quantityInStock": 12,
       "describe": "Unisex,Oversize,100% Cotton,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf9514-4152.jpg",
-      "cid": 1
+      "cid": "6727a2167c0055bfe09f2e1b"
     },
     {
-      "id": 6,
       "name": "MONEY ON MY MIND TEE IN BLACK",
-      "original_price": 550000,
-      "sale_price": 450000,
-      "quantity": 13,
+      "price": 450000,
+      "quantityInStock": 13,
       "describe": "Unisex,Oversize,100% Cotton,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf9444-8531.jpg",
-      "cid": 1
+      "cid": "6727a2167c0055bfe09f2e1b"
     },
     {
-      "id": 7,
       "name": "EMBOSSED LOGOS STRAIGHT JEANS",
-      "original_price": 950000,
-      "sale_price": 850000,
-      "quantity": 17,
+      "price": 850000,
+      "quantityInStock": 17,
       "describe": "Unisex,Straigh form,Denim,Model wears size 32",
       "image": "https://smakerclothing.com/upload/sanpham/dsc02893-4369.jpg",
-      "cid": 2
+      "cid": "6727a2167c0055bfe09f2e1c"
     },
     {
-      "id": 8,
       "name": "BORN BROKE DIE RICH MESH SHORT IN CREAM",
-      "original_price": 650000,
-      "sale_price": 550000,
-      "quantity": 15,
+      "price": 550000,
+      "quantityInStock": 15,
       "describe": "Unisex,100% Mesh,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf9407-4077.jpg",
-      "cid": 3
+      "cid": "6727a2167c0055bfe09f2e1d"
     },
     {
-      "id": 9,
       "name": "STRIPES KHAKI PANTS IN BROWN",
-      "original_price": 800000,
-      "sale_price": 700000,
-      "quantity": 18,
+      "price": 700000,
+      "quantityInStock": 18,
       "describe": "Unisex,Straight Fit,100% Cotton,Model wears size L",
       "image": "https://smakerclothing.com/upload/sanpham/dscf8299-9001.jpg",
-      "cid": 4
+      "cid": "6727a2167c0055bfe09f2e1e"
     },
     {
-      "id": 10,
       "name": "$MAKER STRAIGHT JEANS IN BLUE",
-      "original_price": 800000,
-      "sale_price": 700000,
-      "quantity": 12,
+      "price": 700000,
+      "quantityInStock": 12,
       "describe": "Unisex,Straigh form,Denim,Model wears size 32",
       "image": "https://smakerclothing.com/upload/sanpham/dscf8683-0961.jpg",
-      "cid": 2
+      "cid": "6727a2167c0055bfe09f2e1c"
+    },
+    {
+      "name": "LOGO STRAIGHT JEANS IN LIGHT BLUE",
+      "price": 750000,
+      "quantityInStock": 14,
+      "description": "Unisex, Straight form, Denim, Model wears size 32",
+      "image": "https://smakerclothing.com/upload/sanpham/dscf7049-7331.jpg",
+      "cid": "6727a2167c0055bfe09f2e1c"
+    },
+    {
+      "name": "$MAKER SHORT ON FIRE IN BLACK",
+      "price": 600000,
+      "quantityInStock": 19,
+      "description": "Unisex, Draper & Cotton, Model wears size L",
+      "image": "https://smakerclothing.com/upload/sanpham/dsc00766-4281.jpg",
+      "cid": "6727a2167c0055bfe09f2e1d"
+    },
+    {
+      "name": "$MAKER CORDUROY SHORT IN TAN",
+      "price": 550000,
+      "quantityInStock": 13,
+      "description": "Unisex, 100% Mesh, Model wears size L",
+      "image": "https://smakerclothing.com/upload/sanpham/dsc00754-4189.jpg",
+      "cid": "6727a2167c0055bfe09f2e1d"
+    },
+    {
+      "name": "$MAKER X SWE CARGO FLARE PANTS IN BROWN",
+      "price": 650000,
+      "quantityInStock": 11,
+      "description": "Unisex, Straight form, 100% jean, Model wears size L",
+      "image": "https://smakerclothing.com/upload/sanpham/1-(5)-1007.jpg",
+      "cid": "6727a2167c0055bfe09f2e1e"
+    },
+    {
+      "name": "CUSTOMIZE FLARE SWEAT PANTS IN BLACK",
+      "price": 1050000,
+      "quantityInStock": 20,
+      "description": "Hand made custom (vẽ sơn bằng tay), Unisex, 100% Cotton (Nỉ), Model wears size L",
+      "image": "https://smakerclothing.com/upload/sanpham/img_6182-0014.jpg",
+      "cid": "6727a2167c0055bfe09f2e1e"
     }
   ],
   "users": [
     {
-      "userID": 1,
-      "userName": "quangtoan",
+      "userName": "minh05",
       "gender": "male",
-      "email": "saler1@gmail.com",
+      "email": "minh05@gmail.com",
       "mobile": "0939152003",
       "avatar": "https://img.nimo.tv/t/1629526287189/202403131710297308141_1629526287189_avatar.png/w240_l0/img.webp",
       "address": "ha noi",
       "pass": "123",
-      "roleID": 1
+      "roleID": "6727a6fc7c0055bfe09f2e37"
     },
     {
-      "userID": 2,
-      "userName": "nguyentahoang",
+      "userName": "nhatminh04",
       "gender": "male",
-      "email": "admin@gmail.com",
+      "email": "nhatminh04@gmail.com",
       "mobile": "0969112003",
       "avatar": "null",
       "address": "ha noi",
       "pass": "123",
-      "roleID": 2
+      "roleID": "6727a6fc7c0055bfe09f2e36"
     },
     {
-      "userID": 3,
-      "userName": "tahoang",
+      "userName": "minhnhat",
       "gender": "male",
-      "email": "saler2@gmail.com",
-      "mobile": "0969112003",
+      "email": "minhnhat@gmail.com",
+      "mobile": "0969112009",
       "avatar": "null",
       "address": "ha noi",
       "pass": "123",
-      "roleID": 1
+      "roleID": "6727a6fc7c0055bfe09f2e38"
     },
     {
-      "userID": 4,
-      "userName": "nhatminh",
+      "userName": "davidtran",
       "gender": "male",
-      "email": "marketer@gmail.com",
-      "mobile": "0969102003",
+      "email": "david@gmail.com",
+      "mobile": "0969102703",
       "avatar": "null",
       "address": "tu son",
       "pass": "123",
-      "roleID": 3
+      "roleID": "6727a6fc7c0055bfe09f2e39"
     }
   ],
   "roles": [
     {
-      "roleID": 1,
-      "roleName": "Saler"
-    },
-    {
-      "roleID": 2,
       "roleName": "Admin"
     },
     {
-      "roleID": 3,
       "roleName": "Customer"
     },
     {
-      "roleID": 4,
       "roleName": "Sale Manager"
     },
     {
-      "roleID": 5,
       "roleName": "Warehouse Staff"
     }
   ],
   "productSizes": [
     {
-      "productID": 1,
+      "productID": "6727a5747c0055bfe09f2e23",
       "sizes": [
         {
           "name": "M",
@@ -206,7 +214,7 @@
       ]
     },
     {
-      "productID": 2,
+      "productID": "6727a5747c0055bfe09f2e24",
       "sizes": [
         {
           "name": "M",
@@ -223,7 +231,7 @@
       ]
     },
     {
-      "productID": 3,
+      "productID": "6727a5747c0055bfe09f2e25",
       "sizes": [
         {
           "name": "M",
@@ -240,7 +248,7 @@
       ]
     },
     {
-      "productID": 4,
+      "productID": "6727a5747c0055bfe09f2e26",
       "sizes": [
         {
           "name": "M",
@@ -257,7 +265,7 @@
       ]
     },
     {
-      "productID": 5,
+      "productID": "6727a5747c0055bfe09f2e27",
       "sizes": [
         {
           "name": "M",
@@ -274,7 +282,7 @@
       ]
     },
     {
-      "productID": 6,
+      "productID": "6727a5747c0055bfe09f2e28",
       "sizes": [
         {
           "name": "M",
@@ -291,7 +299,7 @@
       ]
     },
     {
-      "productID": 7,
+      "productID": "6727a5747c0055bfe09f2e29",
       "sizes": [
         {
           "name": "M",
@@ -308,7 +316,7 @@
       ]
     },
     {
-      "productID": 8,
+      "productID": "6727a5747c0055bfe09f2e2a",
       "sizes": [
         {
           "name": "M",
@@ -325,7 +333,7 @@
       ]
     },
     {
-      "productID": 9,
+      "productID": "6727a5747c0055bfe09f2e2b",
       "sizes": [
         {
           "name": "M",
@@ -342,7 +350,92 @@
       ]
     },
     {
-      "productID": 10,
+      "productID": "6727a5747c0055bfe09f2e2c",
+      "sizes": [
+        {
+          "name": "M",
+          "quantity": 10
+        },
+        {
+          "name": "L",
+          "quantity": 20
+        },
+        {
+          "name": "XL",
+          "quantity": 15
+        }
+      ]
+    },
+    {
+      "productID": "6727a5747c0055bfe09f2e2d",
+      "sizes": [
+        {
+          "name": "M",
+          "quantity": 10
+        },
+        {
+          "name": "L",
+          "quantity": 20
+        },
+        {
+          "name": "XL",
+          "quantity": 15
+        }
+      ]
+    },
+    {
+      "productID": "6727a5747c0055bfe09f2e2e",
+      "sizes": [
+        {
+          "name": "M",
+          "quantity": 10
+        },
+        {
+          "name": "L",
+          "quantity": 20
+        },
+        {
+          "name": "XL",
+          "quantity": 15
+        }
+      ]
+    },
+    {
+      "productID": "6727a5747c0055bfe09f2e2f",
+      "sizes": [
+        {
+          "name": "M",
+          "quantity": 10
+        },
+        {
+          "name": "L",
+          "quantity": 20
+        },
+        {
+          "name": "XL",
+          "quantity": 15
+        }
+      ]
+    },
+    {
+      "productID": "6727a5747c0055bfe09f2e30",
+      "sizes": [
+        {
+          "name": "M",
+          "quantity": 10
+        },
+        {
+          "name": "L",
+          "quantity": 20
+        },
+        {
+          "name": "XL",
+          "quantity": 15
+        }
+      ]
+    },
+    {
+      "productID": "6727a5747c0055bfe09f2e31",
       "sizes": [
         {
           "name": "M",

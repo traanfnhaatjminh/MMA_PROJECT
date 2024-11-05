@@ -3,13 +3,16 @@ import React from 'react'
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6'
 
 const CartCard = ({ item, deleteItemFromCart }) => {
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('de-DE').format(price); // 'de-DE' for the format like 1.000.000
+    };
     return (
         <View style={styles.container}>
             <Image source={{ uri: item.image }}
                 style={styles.coverImage} />
             <View style={styles.cardContent}>
                 <Text style={styles.title}>{item.name}</Text>
-                <Text style={styles.price}>{item.sale_price} VND</Text>
+                <Text style={styles.price}>{formatPrice(item.price)} VND</Text>
                 <View>
                     <Text style={styles.size}>{item.size}</Text>
                 </View>
